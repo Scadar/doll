@@ -44,10 +44,6 @@ const routes: RouteObject[] = [
         element: <AccountPage />,
       },
       {
-        path: 'doll',
-        element: <Navigate to="/" replace />,
-      },
-      {
         path: '*',
         element: <NotFoundPage />,
       },
