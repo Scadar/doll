@@ -26,6 +26,12 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 const CatalogPage = () => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -43,7 +49,7 @@ const CatalogPage = () => {
     {
       id: 1,
       name: 'Микки Маус',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       category: 'cartoons',
       ageGroup: 'preschool',
       price: 2000,
@@ -52,7 +58,7 @@ const CatalogPage = () => {
     {
       id: 2,
       name: 'Человек-паук',
-      image: '/src/assets/blue_rabbit.png',
+      image: blueRabbitImage,
       category: 'superheroes',
       ageGroup: 'school',
       price: 2500,
@@ -61,7 +67,7 @@ const CatalogPage = () => {
     {
       id: 3,
       name: 'Эльза',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       category: 'fairytales',
       ageGroup: 'preschool',
       price: 2200,
@@ -70,7 +76,7 @@ const CatalogPage = () => {
     {
       id: 4,
       name: 'Лев',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       category: 'animals',
       ageGroup: 'toddlers',
       price: 1800,
@@ -79,7 +85,7 @@ const CatalogPage = () => {
     {
       id: 5,
       name: 'Бэтмен',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       category: 'superheroes',
       ageGroup: 'school',
       price: 2700,
@@ -88,7 +94,7 @@ const CatalogPage = () => {
     {
       id: 6,
       name: 'Минни Маус',
-      image: '/src/assets/blue_rabbit.png',
+      image: blueRabbitImage,
       category: 'cartoons',
       ageGroup: 'preschool',
       price: 2000,
@@ -97,7 +103,7 @@ const CatalogPage = () => {
     {
       id: 7,
       name: 'Белоснежка',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       category: 'fairytales',
       ageGroup: 'preschool',
       price: 2100,
@@ -106,7 +112,7 @@ const CatalogPage = () => {
     {
       id: 8,
       name: 'Тигр',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       category: 'animals',
       ageGroup: 'toddlers',
       price: 1900,

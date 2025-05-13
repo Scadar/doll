@@ -32,6 +32,12 @@ import HomeIcon from '@mui/icons-material/Home';
 import CategoryIcon from '@mui/icons-material/Category';
 import * as React from "react";
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -76,9 +82,9 @@ const ProductPage = () => {
     id: Number(id),
     name: id === '1' ? 'Микки Маус' : id === '2' ? 'Человек-паук' : 'Эльза',
     images: [
-      '/src/assets/bear.png',
-      '/src/assets/blue_rabbit.png',
-      '/src/assets/pink_rabbit.png',
+      bearImage,
+      blueRabbitImage,
+      pinkRabbitImage,
     ],
     category: id === '1' ? 'cartoons' : id === '2' ? 'superheroes' : 'fairytales',
     ageGroup: id === '1' ? 'preschool' : id === '2' ? 'school' : 'preschool',
@@ -106,19 +112,19 @@ const ProductPage = () => {
       {
         id: id === '1' ? 6 : id === '2' ? 5 : 7,
         name: id === '1' ? 'Минни Маус' : id === '2' ? 'Бэтмен' : 'Белоснежка',
-        image: '/src/assets/pink_rabbit.png',
+        image: pinkRabbitImage,
         price: id === '1' ? 2000 : id === '2' ? 2700 : 2100,
       },
       {
         id: 4,
         name: 'Лев',
-        image: '/src/assets/panda.png',
+        image: pandaImage,
         price: 1800,
       },
       {
         id: 8,
         name: 'Тигр',
-        image: '/src/assets/blue_rabbit.png',
+        image: blueRabbitImage,
         price: 1900,
       },
     ],

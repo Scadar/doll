@@ -25,6 +25,12 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import PersonIcon from '@mui/icons-material/Person';
 import * as React from "react";
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 const BlogPage = () => {
   const { t } = useTranslation();
 
@@ -41,7 +47,7 @@ const BlogPage = () => {
       title: 'Как организовать незабываемый детский праздник с ростовыми куклами',
       excerpt: 'Советы и идеи для организации яркого и запоминающегося детского праздника с использованием ростовых кукол.',
       content: 'Полный текст статьи...',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       date: '2023-05-15',
       author: 'Анна Иванова',
       category: 'советы',
@@ -52,7 +58,7 @@ const BlogPage = () => {
       title: 'Топ-10 самых популярных персонажей для детских праздников',
       excerpt: 'Рейтинг самых востребованных ростовых кукол для детских мероприятий в Нефтекамске в этом году.',
       content: 'Полный текст статьи...',
-      image: '/src/assets/blue_rabbit.png',
+      image: blueRabbitImage,
       date: '2023-04-20',
       author: 'Сергей Петров',
       category: 'рейтинги',
@@ -63,7 +69,7 @@ const BlogPage = () => {
       title: 'Фотоотчет с городского праздника в парке культуры',
       excerpt: 'Яркие моменты с праздника в городском парке, где наши ростовые куклы создавали атмосферу веселья и радости.',
       content: 'Полный текст статьи...',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       date: '2023-03-10',
       author: 'Елена Смирнова',
       category: 'мероприятия',
@@ -74,7 +80,7 @@ const BlogPage = () => {
       title: 'Как выбрать ростовую куклу для тематического праздника',
       excerpt: 'Рекомендации по выбору подходящего персонажа для различных тематических мероприятий.',
       content: 'Полный текст статьи...',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       date: '2023-02-25',
       author: 'Анна Иванова',
       category: 'советы',
@@ -85,7 +91,7 @@ const BlogPage = () => {
       title: 'Новые костюмы в нашей коллекции: герои популярных мультфильмов',
       excerpt: 'Представляем новые ростовые куклы персонажей из самых популярных мультфильмов этого года.',
       content: 'Полный текст статьи...',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       date: '2023-01-15',
       author: 'Дмитрий Козлов',
       category: 'новости',

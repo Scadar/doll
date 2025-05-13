@@ -10,6 +10,12 @@ import BusinessIcon from '@mui/icons-material/Business';
 import InfoIcon from '@mui/icons-material/Info';
 import HistoryIcon from '@mui/icons-material/History';
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 const HomePage = () => {
   const { t } = useTranslation();
 
@@ -18,28 +24,28 @@ const HomePage = () => {
     {
       id: 1,
       name: 'Микки Маус',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       category: 'cartoons',
       price: 2000,
     },
     {
       id: 2,
       name: 'Человек-паук',
-      image: '/src/assets/blue_rabbit.png',
+      image: blueRabbitImage,
       category: 'superheroes',
       price: 2500,
     },
     {
       id: 3,
       name: 'Эльза',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       category: 'fairytales',
       price: 2200,
     },
     {
       id: 4,
       name: 'Лев',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       category: 'animals',
       price: 1800,
     },
@@ -127,7 +133,7 @@ const HomePage = () => {
 
           }}
         >
-          <img src="/src/assets/bear.png" alt="Character" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '10%' }} />
+          <img src={bearImage} alt="Character" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '10%' }} />
         </Box>
 
         <Box
@@ -146,7 +152,7 @@ const HomePage = () => {
             display: { xs: 'none', sm: 'block' },
           }}
         >
-          <img src="/src/assets/panda.png" alt="Character" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '10%' }} />
+          <img src={pandaImage} alt="Character" style={{ width: '100%', height: '100%', objectFit: 'contain', borderRadius: '10%' }} />
         </Box>
 
         <Container maxWidth="md" sx={{ position: 'relative', zIndex: 2 }}>

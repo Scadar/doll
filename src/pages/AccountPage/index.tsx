@@ -34,6 +34,12 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import * as React from "react";
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -82,7 +88,7 @@ const AccountPage = () => {
         {
           id: 1,
           name: 'Микки Маус',
-          image: '/src/assets/bear.png',
+          image: bearImage,
           price: 2000,
           duration: '2 часа',
         },
@@ -97,7 +103,7 @@ const AccountPage = () => {
         {
           id: 2,
           name: 'Человек-паук',
-          image: '/src/assets/blue_rabbit.png',
+          image: blueRabbitImage,
           price: 2500,
           duration: '3 часа',
         },
@@ -111,21 +117,21 @@ const AccountPage = () => {
     {
       id: 1,
       name: 'Микки Маус',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       category: 'cartoons',
       price: 2000,
     },
     {
       id: 3,
       name: 'Эльза',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       category: 'fairytales',
       price: 2200,
     },
     {
       id: 5,
       name: 'Бэтмен',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       category: 'superheroes',
       price: 2700,
     },

@@ -15,6 +15,12 @@ import {
 import { useTranslation } from 'react-i18next';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+// Import images
+import bearImage from '../../assets/bear.png';
+import blueRabbitImage from '../../assets/blue_rabbit.png';
+import pinkRabbitImage from '../../assets/pink_rabbit.png';
+import pandaImage from '../../assets/panda.png';
+
 const AboutPage = () => {
   const { t } = useTranslation();
 
@@ -24,28 +30,28 @@ const AboutPage = () => {
       id: 1,
       name: 'Анна Иванова',
       position: 'Директор',
-      image: '/src/assets/bear.png',
+      image: bearImage,
       description: 'Основатель компании с опытом работы в event-индустрии более 10 лет.',
     },
     {
       id: 2,
       name: 'Сергей Петров',
       position: 'Менеджер по работе с клиентами',
-      image: '/src/assets/blue_rabbit.png',
+      image: blueRabbitImage,
       description: 'Отвечает за взаимодействие с клиентами и организацию мероприятий.',
     },
     {
       id: 3,
       name: 'Елена Смирнова',
       position: 'Дизайнер костюмов',
-      image: '/src/assets/pink_rabbit.png',
+      image: pinkRabbitImage,
       description: 'Создает и поддерживает в идеальном состоянии все наши костюмы.',
     },
     {
       id: 4,
       name: 'Дмитрий Козлов',
       position: 'Аниматор',
-      image: '/src/assets/panda.png',
+      image: pandaImage,
       description: 'Профессиональный аниматор с опытом работы более 5 лет.',
     },
   ];
