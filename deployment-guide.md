@@ -7,7 +7,8 @@
 4. [Деплой с использованием Docker](#деплой-с-использованием-docker)
 5. [Деплой на Netlify](#деплой-на-netlify)
 6. [Деплой на Vercel](#деплой-на-vercel)
-7. [Настройка CI/CD](#настройка-cicd)
+7. [Деплой на GitHub Pages](#деплой-на-github-pages)
+8. [Настройка CI/CD](#настройка-cicd)
 
 ## Подготовка проекта к деплою
 
@@ -248,3 +249,112 @@ jobs:
 ```
 
 Для использования этого workflow необходимо добавить секреты `NETLIFY_AUTH_TOKEN` и `NETLIFY_SITE_ID` в настройках репозитория GitHub.
+
+## Деплой на GitHub Pages
+
+GitHub Pages - бесплатный хостинг от GitHub, который отлично подходит для статических сайтов и SPA-приложений.
+
+### Подготовка проекта
+
+1. Убедитесь, что в файле `vite.config.ts` указан правильный базовый путь:
+
+```typescript
+export default defineConfig({
+  plugins: [react()],
+  base: '/имя-вашего-репозитория/', // Замените на имя вашего репозитория на GitHub
+})
+```
+
+2. Установите пакет `gh-pages` как dev-зависимость:
+
+```bash
+npm install --save-dev gh-pages
+```
+
+3. Добавьте скрипты для деплоя в `package.json`:
+
+```json
+"scripts": {
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist"
+}
+```
+
+### Ручной деплой
+
+Для ручного деплоя выполните команду:
+
+```bash
+npm run deploy
+```
+
+Эта команда соберет проект и отправит содержимое директории `dist` в ветку `gh-pages` вашего репозитория.
+
+### Автоматический деплой с GitHub Actions
+
+Для автоматического деплоя при каждом пуше в ветку `main` можно использовать GitHub Actions:
+
+1. Создайте файл `.github/workflows/github-pages-deploy.yml`:
+
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  # Позволяет запускать workflow вручную из вкладки Actions
+  workflow_dispatch:
+
+# Устанавливает разрешения для GITHUB_TOKEN
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Разрешает только один параллельный деплой
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: './dist'
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+```
+
+2. В настройках репозитория на GitHub:
+   - Перейдите в раздел "Settings" > "Pages"
+   - В разделе "Build and deployment" выберите "GitHub Actions" в качестве источника
+   - После первого успешного деплоя ваш сайт будет доступен по адресу `https://ваш-username.github.io/имя-репозитория/`
+
+### Важные замечания
+
+1. Убедитесь, что ваш репозиторий публичный (для бесплатного использования GitHub Pages) или у вас есть GitHub Pro для приватных репозиториев.
+2. Если вы используете React Router, убедитесь, что он настроен для работы с GitHub Pages (используйте `HashRouter` вместо `BrowserRouter` или настройте `basename` в `BrowserRouter`).
+3. После деплоя может потребоваться некоторое время (обычно несколько минут) для того, чтобы изменения стали видны на GitHub Pages.
