@@ -1,4 +1,4 @@
-import { createBrowserRouter, type RouteObject } from 'react-router-dom';
+import {createBrowserRouter, Navigate, type RouteObject} from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import HomePage from '../pages/HomePage';
 import CatalogPage from '../pages/CatalogPage';
@@ -42,6 +42,10 @@ const routes: RouteObject[] = [
       {
         path: 'account',
         element: <AccountPage />,
+      },
+      {
+        path: 'doll',
+        element: <Navigate to="/" replace />,
       },
       {
         path: '*',
