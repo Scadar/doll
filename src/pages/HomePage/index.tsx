@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Button, Grid, Card, CardContent, CardMedia, Avatar, Paper, Icon, Divider } from '@mui/material';
+import { Box, Container, Typography, Button, Grid, Card, CardContent, CardMedia, Avatar, Divider } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { Link as RouterLink } from 'react-router-dom';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
